@@ -16,12 +16,12 @@
 (def canon-parts
   {
    1 [
-      [ :iii+ :ii+ :i+ :vii]
+      [ :iii+ :ii+ :i+ :vii]  ;; crotchets
       [ :vi :v :vi :vii]]
    2 [ [ :i+ :vii :vi :v]
        [:iv :iii :iv :ii]]
    3 [ [
-        [:i :iii]
+        [:i :iii] ;; quavers/half notes
         [:v :iv]
         [:iii :i]
         [:iii :ii]
