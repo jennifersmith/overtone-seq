@@ -6,12 +6,14 @@
     (+  root (pitch/degree->interval degree scale))
     degree))
 
+;; todo : too much nil checks here. but note could be :i :v or rest...
 (defn resolve-note [{:keys [key-signature octave]} note]
-  (if-let [[root scale] key-signature]
-    (+ ( * 12 (or octave 0))
-       (degree->pitch  root scale note))
-    note
-    )
+  (if note 
+    (if-let [[root scale] key-signature]
+      (+ ( * 12 (or octave 0))
+         (degree->pitch  root scale note))
+      note
+      ))
   )
 
 

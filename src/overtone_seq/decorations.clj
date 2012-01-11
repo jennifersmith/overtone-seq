@@ -2,7 +2,7 @@
   (:use overtone-seq.compilation))
 
 (defn tie [note]
-  "This note is tied to the previous note to increase its duration. Use this when you need to hold over a division (like across a bar)"
+  "This note is tied to the previous note to increase its duration. Use this when you need to hold over a division (like across a bar). You cant tie to a tie though unfortunately... (tie :i) (tie (tie :i) will give an error"
   (fn [result {:keys [offset length] :as phrase}]
     (let 
         [note (resolve-note (:properties phrase) note)]

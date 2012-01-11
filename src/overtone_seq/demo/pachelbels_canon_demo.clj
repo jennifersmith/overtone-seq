@@ -29,10 +29,13 @@
    (cons crap-cello (repeat 3 crap-violin))
    (make-canon)))
 
-(defn compile-canon []
-  (compile-tune {:key-signature [(note :D4) :major]} ( phrases-with-instruments) )
+(defn compile-canon [root scale]
+  (compile-tune {:key-signature [(note root) scale]} ( phrases-with-instruments) )
   )
 
-(defn play-pachelbels-canon []
-  (play-tune (compile-canon) (metronome 65) )
+(defn play-pachelbels-canon [root scale]
+  (play-tune (compile-canon root scale) (metronome 65) )
   )
+
+;; correct
+;; (play-pachelbels-canon root scale)
